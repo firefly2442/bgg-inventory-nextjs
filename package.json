@@ -1,0 +1,27 @@
+{
+  "name": "bgg-inventory-nextjs",
+  "version": "1.0.0",
+  "description": "A web application that shows your inventory of board games via data from BoardGameGeek (BGG).",
+  "keywords": [
+    "board games",
+    "BoardGameGeek",
+    "inventory"
+  ],
+  "dependencies": {
+    "@material-ui/core": "4.11.3",
+    "clsx": "^1.1.1",
+    "next": "^10.0.6",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "npm-check-updates": "^11.1.1"
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest"
+  }
+}
