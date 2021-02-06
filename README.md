@@ -27,7 +27,7 @@ on how many boardgames you have.
 
 Build the Docker container
 
-`docker build . -t firefly2442/bgg-inventory-nextjs:latest`
+`docker build . --pull -t firefly2442/bgg-inventory-nextjs:latest`
 
 ## Running
 
