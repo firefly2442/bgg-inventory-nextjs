@@ -49,7 +49,7 @@ try:
             print("ERROR: status code: " + str(r.status_code))
 
         # be nice so we don't thrash BGG
-        time.sleep(0.2)
+        time.sleep(0.35)
 
     # alphabetize list of dictionaries by name
     allgames = sorted(allgames, key = lambda i: i['name'])
