@@ -37,6 +37,12 @@ Run the Docker container
 
 View the site on `localhost:9990`
 
+## For Developers
+
+Check for `package.json` updates
+
+`ncu -u`
+
 ## Help
 
 Create a Github issue
