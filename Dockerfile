@@ -11,7 +11,11 @@ RUN npm install --only=production
 
 COPY . /usr/src/app
 
-RUN npm run build
+# opt out of telemetry/metrics from nextjs
+# https://nextjs.org/telemetry
+RUN npx next telemetry disable & npm run build
 EXPOSE 3000
+
+RUN chmod +x startup.sh
 
 CMD ["./startup.sh"]

@@ -1,4 +1,4 @@
-# bgg-inventory-flask
+# bgg-inventory-nextjs
 
 A simple board game inventory system that leverages
 the [BoardGameGeek (BGG) API](https://boardgamegeek.com/wiki/page/BGG_XML_API2).
@@ -6,22 +6,44 @@ the [BoardGameGeek (BGG) API](https://boardgamegeek.com/wiki/page/BGG_XML_API2).
 ## Requirements
 
 * [Docker](https://www.docker.com/)
+* [Python](https://www.python.org/)
 
 ## Built With
 
 * [Next.js](https://nextjs.org/)
 * [Reactjs](https://reactjs.org/)
 * [material-ui](https://material-ui.com/)
+* [Node.js](https://nodejs.org/)
 
-## Building and Running
+## Building
 
-* 
+Edit `inventory.json` and set your games.  The IDs are from BoardGameGeek.
+
+Run the Python script which will download thumbnails and details about the
+games via the BoardGameGeek API.  This may take some time depending
+on how many boardgames you have.
+
+`python3 main.py`
+
+Build the Docker container
+
+`docker build . -t firefly2442/bgg-inventory-nextjs:latest`
+
+## Running
+
+Run the Docker container
+
+`docker run -d -p 9990:3000 --name=bgg-inventory-nextjs firefly2442/bgg-inventory-nextjs`
+
+View the site on `localhost:9990`
 
 ## Help
 
+Create a Github issue
+
 ## License
 
-`bgg-inventory-flask` is licensed under the GPLv3
+`bgg-inventory-nextjs` is licensed under the GPLv3
 
 The BoardGameGeek (BGG) API is [licensed](https://boardgamegeek.com/wiki/page/XML_API_Terms_of_Use#)
 for use for non-commercial purposes.
