@@ -43,6 +43,10 @@ Check for `package.json` updates
 
 `ncu -u`
 
+Run the Nodejs app manually via:
+
+`npm run dev`
+
 ## Help
 
 Create a Github issue

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # for development
-npm run dev
+#npm run dev
 
 # for production
-#npm start
+npm start
