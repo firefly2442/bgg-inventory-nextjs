@@ -37,7 +37,7 @@ export default function GameTable() {
           {games.map((row) => (
             <TableRow key={row.id}>
               <TableCell>
-                <a target="_blank" href={"https://www.boardgamegeek.com/"+row.type+"/"+row.id+"/"}>
+                <a target="_blank" href={"https://www.boardgamegeek.com/"+row.type+"/"+row.id+"/"} rel="noopener noreferrer">
                   <img src={"./thumbnails/" + row.id + row.thumbnailextension} alt={row.name} title={row.name} />
                 </a>
               </TableCell>
