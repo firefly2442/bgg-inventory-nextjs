@@ -10,7 +10,7 @@ RUN wget https://github.com/libvips/libvips/releases/download/v8.10.6/vips-8.10.
 RUN tar zxf vips-8.10.6.tar.gz
 RUN cd vips-8.10.6 && \
     ./configure && \
-    make && \
+    make -j 4 && \
     make install && \
     ldconfig
 
