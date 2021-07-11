@@ -8,7 +8,8 @@ try:
     f.close()
 
     allgames = []
-    for game in data['boardgames']:
+    for i, game in enumerate(data['boardgames']):
+        print(str(i) + " / " + str(len(data['boardgames'])))
         # https://boardgamegeek.com/wiki/page/BGG_XML_API2
         # example for Pandemic:
         # https://www.boardgamegeek.com/xmlapi2/thing?id=30549&stats=1
@@ -49,7 +50,7 @@ try:
             print("ERROR: status code: " + str(r.status_code))
 
         # be nice so we don't thrash BGG
-        time.sleep(0.35)
+        time.sleep(0.40)
 
     # alphabetize list of dictionaries by name
     allgames = sorted(allgames, key = lambda i: i['name'])
