@@ -6,9 +6,9 @@ ENV PORT 3000
 # this fixes the issue by building libvips from source and
 # manually installing Sharp
 # https://libvips.github.io/libvips/install.html#building-libvips-from-a-source-tarball
-RUN wget https://github.com/libvips/libvips/releases/download/v8.10.6/vips-8.10.6.tar.gz
-RUN tar zxf vips-8.10.6.tar.gz
-RUN cd vips-8.10.6 && \
+RUN wget https://github.com/libvips/libvips/releases/download/v8.11.2/vips-8.11.2.tar.gz
+RUN tar zxf vips-8.11.2.tar.gz
+RUN cd vips-8.11.2 && \
     ./configure && \
     make -j 4 && \
     make install && \
