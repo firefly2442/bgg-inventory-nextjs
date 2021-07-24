@@ -9,7 +9,7 @@ export default function Github() {
     <Typography variant="body2" color="textSecondary" align="center">
       <br></br>
       <Divider />
-      <MuiLink color="inherit" href="https://github.com/firefly2442/blah">
+      <MuiLink color="inherit" href="https://github.com/firefly2442/bgg-inventory-nextjs/">
         bgg-inventory-nextjs - {packageJson.version}
       </MuiLink>
       <br></br>
