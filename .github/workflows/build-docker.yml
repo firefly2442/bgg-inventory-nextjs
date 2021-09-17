@@ -1,0 +1,36 @@
+# validate YAML
+# https://codebeautify.org/yaml-validator
+
+on:
+  push:
+    branches:
+      - master
+
+name: Build and Save Docker Image
+
+jobs:
+  build:
+    name: Build and Save Docker Image
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build and push docker
+        id: docker_build
+        # https://github.com/docker/build-push-action
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          tags: ghcr.io/firefly2442/bgg-inventory-nextjs:latest
+          # https://github.com/docker/build-push-action/blob/master/docs/advanced/cache.md
+          cache-from: type=registry,ref=ghcr.io/firefly2442/bgg-inventory-nextjs:latest
+          cache-to: type=inline
+      -
+        name: Image digest
+        run: echo ${{ steps.docker_build.outputs.digest }}
