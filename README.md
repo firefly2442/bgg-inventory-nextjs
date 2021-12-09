@@ -31,13 +31,17 @@ on how many boardgames you have.
 
 Build the Docker container
 
-`docker build . --pull -t firefly2442/bgg-inventory-nextjs:latest`
+`docker build . --pull -t ghcr.io/firefly2442/bgg-inventory-nextjs:latest`
+
+Or just pull it straight from Github
+
+`docker pull ghcr.io/firefly2442/bgg-inventory-nextjs:latest`
 
 ## Running
 
 Run the Docker container
 
-`docker run -d --restart unless-stopped -p 9990:3000 -v $(pwd)/allgames.json:/usr/src/app/allgames.json --name=bgg-inventory-nextjs firefly2442/bgg-inventory-nextjs`
+`docker run -d --restart unless-stopped -p 9990:3000 -v $(pwd)/allgames.json:/usr/src/app/allgames.json --name=bgg-inventory-nextjs ghcr.io/firefly2442/bgg-inventory-nextjs:latest`
 
 View the site on `localhost:9990`
 
