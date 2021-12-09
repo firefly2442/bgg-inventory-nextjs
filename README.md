@@ -37,7 +37,7 @@ Build the Docker container
 
 Run the Docker container
 
-`docker run -d --restart unless-stopped -p 9990:3000 --name=bgg-inventory-nextjs firefly2442/bgg-inventory-nextjs`
+`docker run -d --restart unless-stopped -p 9990:3000 -v $(pwd)/allgames.json:/usr/src/app/allgames.json --name=bgg-inventory-nextjs firefly2442/bgg-inventory-nextjs`
 
 View the site on `localhost:9990`
 

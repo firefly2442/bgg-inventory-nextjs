@@ -27,7 +27,7 @@ COPY . /usr/src/app
 
 # opt out of telemetry/metrics from nextjs
 # https://nextjs.org/telemetry
-RUN npx next telemetry disable & npm run build
+RUN npx next telemetry disable
 EXPOSE 3000
 
 RUN chmod +x startup.sh
