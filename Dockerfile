@@ -21,7 +21,8 @@ RUN npm install sharp
 
 COPY package*.json /usr/src/app/
 # the --only=production flag means this will not install the devDependencies
-RUN npm install --only=production
+# TODO: --legacy-peer-deps is a hack to force the install around a dependency resolution
+RUN npm install --only=production --legacy-peer-deps
 
 COPY . /usr/src/app
 
