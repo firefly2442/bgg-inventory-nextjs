@@ -41,11 +41,19 @@ Or just pull it straight from Github
 
 Run the Docker container
 
-`docker run -d --restart unless-stopped -p 9990:3000 -v $(pwd)/allgames.json:/usr/src/app/allgames.json --name=bgg-inventory-nextjs ghcr.io/firefly2442/bgg-inventory-nextjs:latest`
+`docker run -d --restart unless-stopped -p 9990:3000 -v $(pwd)/allgames.json:/usr/src/app/allgames.json -v $(pwd)/public/thumbnails/:/usr/src/app/public/thumbnails/ --name=bgg-inventory-nextjs ghcr.io/firefly2442/bgg-inventory-nextjs:latest`
 
 View the site on `localhost:9990`
 
 ## For Developers
+
+Install dependencies
+
+`npm install --legacy-peer-deps`
+
+Install NPM check updates
+
+`sudo npm install -g npm-check-updates`
 
 Check for `package.json` updates
 
