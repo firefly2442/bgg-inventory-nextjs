@@ -3,11 +3,8 @@ from xml.etree import ElementTree
 from html import unescape
 
 try:
-    f = open('inventory.json', 'r')
-    try:
+    with open('inventory.json', 'r') as f:
         data = json.load(f)
-    finally:
-        f.close()
 
     allgames = []
     for i, game in enumerate(data['boardgames']):
@@ -27,11 +24,8 @@ try:
             if (thumbnail.ok):
                 # get image file extension
                 extensions = os.path.splitext(img.text)
-                tb = open('./public/thumbnails/'+game['id']+extensions[1], 'wb')
-                try:
+                with open('./public/thumbnails/'+game['id']+extensions[1], 'wb') as tb:
                     tb.write(thumbnail.content)
-                finally:
-                    tb.close()
                 gameobj['thumbnailextension'] = extensions[1]
             else:
                 print("ERROR: thumbnail status code: " + str(thumbnail.status_code))
