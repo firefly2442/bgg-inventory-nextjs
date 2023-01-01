@@ -11,7 +11,7 @@ try:
 
     allgames = []
     for i, game in enumerate(data['boardgames']):
-        print(str(i) + " / " + str(len(data['boardgames'])))
+        print(str(i+1) + " / " + str(len(data['boardgames'])))
         # https://boardgamegeek.com/wiki/page/BGG_XML_API2
         # example for Pandemic:
         # https://www.boardgamegeek.com/xmlapi2/thing?id=30549&stats=1
