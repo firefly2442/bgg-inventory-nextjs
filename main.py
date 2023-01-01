@@ -34,7 +34,7 @@ try:
                     tb.close()
                 gameobj['thumbnailextension'] = extensions[1]
             else:
-                print("ERROR: status code: " + str(thumbnail.status_code))
+                print("ERROR: thumbnail status code: " + str(thumbnail.status_code))
             # use the primary official name from BGG
             for n in item.findall('name'):
                 if n.attrib['type'] == "primary":
@@ -53,7 +53,7 @@ try:
             gameobj['averagerating'] = item.find('statistics').find('ratings').find('average').attrib['value']
             allgames.append(gameobj)
         else:
-            print("ERROR: status code: " + str(r.status_code))
+            print("ERROR: XML API status code: " + str(r.status_code))
 
         # be nice so we don't thrash BGG
         time.sleep(0.40)
