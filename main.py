@@ -4,8 +4,10 @@ from html import unescape
 
 try:
     f = open('inventory.json', 'r')
-    data = json.load(f)
-    f.close()
+    try:
+        data = json.load(f)
+    finally:
+        f.close()
 
     allgames = []
     for i, game in enumerate(data['boardgames']):
@@ -25,7 +27,11 @@ try:
             if (thumbnail.ok):
                 # get image file extension
                 extensions = os.path.splitext(img.text)
-                open('./public/thumbnails/'+game['id']+extensions[1], 'wb').write(thumbnail.content)
+                tb = open('./public/thumbnails/'+game['id']+extensions[1], 'wb')
+                try:
+                    tb.write(thumbnail.content)
+                finally:
+                    tb.close()
                 gameobj['thumbnailextension'] = extensions[1]
             else:
                 print("ERROR: status code: " + str(thumbnail.status_code))
