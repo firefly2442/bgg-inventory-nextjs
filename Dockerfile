@@ -2,17 +2,24 @@ FROM node:latest
 
 ENV PORT 3000
 
+RUN apt update && \
+    apt install -y --no-install-recommends meson build-essential pkg-config libglib2.0-dev libexpat1-dev libgirepository1.0-dev && \
+    apt upgrade -y && \
+    apt autoremove -y && \
+    rm -rf /var/lib/apt/lists/*
+
 # on ARM64, it fails with a message about not having Sharp
 # this fixes the issue by building libvips from source and
 # manually installing Sharp
 # https://libvips.github.io/libvips/install.html#building-libvips-from-a-source-tarball
-RUN wget https://github.com/libvips/libvips/releases/download/v8.13.1/vips-8.13.1.tar.gz
-RUN tar zxf vips-8.13.1.tar.gz
-RUN cd vips-8.13.1 && \
-    ./configure && \
-    make -j 4 && \
-    make install && \
-    ldconfig
+RUN wget https://github.com/libvips/libvips/archive/refs/tags/v8.14.1.tar.gz
+RUN tar zxf v8.14.1.tar.gz && \
+    rm v8.14.1.tar.gz && \
+    cd libvips-8.14.1 && \
+    meson setup build && \
+    cd build && \
+    meson compile && \
+    meson install
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
