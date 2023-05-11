@@ -1,9 +1,5 @@
 # bgg-inventory-nextjs
 
-[![Total alerts](https://img.shields.io/lgtm/alerts/g/firefly2442/bgg-inventory-nextjs.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/firefly2442/bgg-inventory-nextjs/alerts/)
-[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/firefly2442/bgg-inventory-nextjs.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/firefly2442/bgg-inventory-nextjs/context:javascript)
-[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/firefly2442/bgg-inventory-nextjs.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/firefly2442/bgg-inventory-nextjs/context:python)
-
 A simple board game inventory system that leverages
 the [BoardGameGeek (BGG) API](https://boardgamegeek.com/wiki/page/BGG_XML_API2).
 
