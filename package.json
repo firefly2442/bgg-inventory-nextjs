@@ -16,7 +16,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "npm-check-updates": "^16.13.0"
+    "npm-check-updates": "^16.13.1"
   },
   "scripts": {
     "dev": "next",
