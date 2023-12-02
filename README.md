@@ -59,6 +59,10 @@ Run the Nodejs app manually via:
 
 `npm run dev`
 
+Run local Trivy security scanning:
+
+`trivy image --ignore-unfixed ghcr.io/firefly2442/bgg-inventory-nextjs:latest`
+
 ## Help
 
 Create a Github issue
