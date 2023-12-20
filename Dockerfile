@@ -12,10 +12,10 @@ RUN apt update && \
 # this fixes the issue by building libvips from source and
 # manually installing Sharp
 # https://libvips.github.io/libvips/install.html#building-libvips-from-a-source-tarball
-RUN wget https://github.com/libvips/libvips/archive/refs/tags/v8.14.1.tar.gz
-RUN tar zxf v8.14.1.tar.gz && \
-    rm v8.14.1.tar.gz && \
-    cd libvips-8.14.1 && \
+RUN wget https://github.com/libvips/libvips/archive/refs/tags/v8.15.1.tar.gz
+RUN tar zxf v8.15.1.tar.gz && \
+    rm v8.15.1.tar.gz && \
+    cd libvips-8.15.1 && \
     meson setup build && \
     cd build && \
     meson compile && \
