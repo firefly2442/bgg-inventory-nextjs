@@ -1,0 +1,11 @@
+services:
+  bgg-inventory-nextjs:
+    build: ./
+    image: ghcr.io/firefly2442/bgg-inventory-nextjs:latest
+    container_name: bgg-inventory-nextjs
+    ports:
+      - "9990:3000"
+    volumes:
+      - ./allgames.json:/usr/src/app/allgames.json:ro
+      - ./public/thumbnails/:/usr/src/app/public/thumbnails/:ro
+    restart: unless-stopped

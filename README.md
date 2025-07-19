@@ -25,21 +25,39 @@ on how many boardgames you have.
 
 `python3 main.py`
 
-Build the Docker container
+Build the Docker container:
 
-`docker build . --pull -t ghcr.io/firefly2442/bgg-inventory-nextjs:latest`
+```shell
+docker build . --pull -t ghcr.io/firefly2442/bgg-inventory-nextjs:latest
+```
 
-Or just pull it straight from Github
+Or just pull it straight from Github:
 
-`docker pull ghcr.io/firefly2442/bgg-inventory-nextjs:latest`
+```shell
+docker pull ghcr.io/firefly2442/bgg-inventory-nextjs:latest
+```
+
+Or leverage `docker-compose.yml`:
+
+```shell
+docker compose build --pull
+```
 
 ## Running
 
-Run the Docker container
+Run the Docker container:
 
-`docker run -d --restart unless-stopped -p 9990:3000 -v $(pwd)/allgames.json:/usr/src/app/allgames.json -v $(pwd)/public/thumbnails/:/usr/src/app/public/thumbnails/ --name=bgg-inventory-nextjs ghcr.io/firefly2442/bgg-inventory-nextjs:latest`
+```shell
+docker run -d --restart unless-stopped -p 9990:3000 -v $(pwd)/allgames.json:/usr/src/app/allgames.json -v $(pwd)/public/thumbnails/:/usr/src/app/public/thumbnails/ --name=bgg-inventory-nextjs ghcr.io/firefly2442/bgg-inventory-nextjs:latest
+```
 
-View the site on `localhost:9990`
+Or leverage the provided `docker-compose.yml`:
+
+```shell
+docker compose up -d
+```
+
+View the site on: [http://localhost:9990](http://localhost:9990)
 
 ## For Developers
 
