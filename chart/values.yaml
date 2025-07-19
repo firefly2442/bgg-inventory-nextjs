@@ -117,7 +117,7 @@ persistence:
   size: 500Mi
   mountPath: /usr/src/app/public/thumbnails/
   volumeName: thumbnails
-  claimName: bgg-inventory-nextjs-thumbnails-pvc
+  claimName: bgg-inventory-nextjs-thumbnails
 
 persistenceAllgames:
   enabled: true
@@ -126,7 +126,7 @@ persistenceAllgames:
   size: 100Mi
   mountPath: /usr/src/app/allgames/
   volumeName: allgames
-  claimName: bgg-inventory-nextjs-allgames-pvc
+  claimName: bgg-inventory-nextjs-allgames
 
 # Additional volumes on the output Deployment definition.
 volumes: []
