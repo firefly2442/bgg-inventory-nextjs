@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "bgg-inventory-nextjs.fullname" . }}-test-connection"
+  labels:
+    {{- include "bgg-inventory-nextjs.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['{{ include "bgg-inventory-nextjs.fullname" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never
