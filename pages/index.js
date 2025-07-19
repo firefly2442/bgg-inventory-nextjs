@@ -15,7 +15,7 @@ import {
 
 import GameTable from "../src/GameTable";
 import Footer from "../src/Footer";
-import games from "../allgames";
+import games from "../allgames/allgames";
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
