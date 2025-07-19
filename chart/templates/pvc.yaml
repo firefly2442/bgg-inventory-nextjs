@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: {{ include "mychart.fullname" . }}-{{ .Values.persistence.volumeName }}
+  name: {{ include "bgg-inventory-nextjs.fullname" . }}-{{ .Values.persistence.volumeName }}
 spec:
   accessModes: {{ toJson .Values.persistence.accessModes }}
   resources:
@@ -16,7 +16,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: {{ .Values.persistenceAllgames.claimName }}
+  name: {{ include "bgg-inventory-nextjs.fullname" . }}-{{ .Values.persistenceAllgames.volumeName }}
 spec:
   accessModes: {{ toJson .Values.persistenceAllgames.accessModes }}
   resources:
