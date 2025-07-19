@@ -57,6 +57,8 @@ Or leverage the provided `docker-compose.yml`:
 docker compose up -d
 ```
 
+Or just leverage the provided Helm chart, see `chart`.
+
 View the site on: [http://localhost:9990](http://localhost:9990)
 
 ## For Developers
