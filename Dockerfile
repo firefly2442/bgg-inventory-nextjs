@@ -33,9 +33,6 @@ RUN npm install --only=production --legacy-peer-deps
 
 COPY . /usr/src/app
 
-# opt out of telemetry/metrics from nextjs
-# https://nextjs.org/telemetry
-RUN npx next telemetry disable
 EXPOSE 3000
 
 HEALTHCHECK --interval=30s --timeout=10s --start-period=10s --retries=3 \
