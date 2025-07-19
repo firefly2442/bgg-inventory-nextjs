@@ -1,7 +1,7 @@
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
-import MuiLink from '@material-ui/core/Link';
-import Divider from '@material-ui/core/Divider';
+import Typography from '@mui/material/Typography';
+import MuiLink from '@mui/material/Link';
+import Divider from '@mui/material/Divider';
 import packageJson from '../package.json';
 
 export default function Github() {
