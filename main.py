@@ -1,8 +1,12 @@
-import requests, json, time, os
+import requests, json, time, os, sys
 from xml.etree import ElementTree
 from html import unescape
 
 try:
+    if os.path.exists('./allgames/allgames.json'):
+        print("allgames.json already exists, aborting download")
+        sys.exit(0)
+
     with open('inventory.json', 'r') as f:
         data = json.load(f)
 
@@ -56,7 +60,7 @@ try:
     allgames = sorted(allgames, key = lambda i: i['name'])
 
     # write JSON file
-    with open('./allgames.json', "w") as outfile:  
+    with open('./allgames/allgames.json', "w") as outfile:
         json.dump(allgames, outfile, indent=4) 
 
 except Exception as e:

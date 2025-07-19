@@ -3,7 +3,7 @@ FROM node:latest
 ENV PORT 3000
 
 RUN apt update && \
-    apt install -y --no-install-recommends meson build-essential pkg-config libglib2.0-dev libexpat1-dev libgirepository1.0-dev && \
+    apt install -y --no-install-recommends meson build-essential pkg-config libglib2.0-dev libexpat1-dev libgirepository1.0-dev curl dos2unix && \
     apt upgrade -y && \
     apt autoremove -y && \
     rm -rf /var/lib/apt/lists/*
@@ -38,6 +38,9 @@ COPY . /usr/src/app
 RUN npx next telemetry disable
 EXPOSE 3000
 
-RUN chmod +x startup.sh
+HEALTHCHECK --interval=30s --timeout=10s --start-period=10s --retries=3 \
+  CMD curl --fail http://localhost:3000 || exit 1
+
+RUN dos2unix startup.sh && chmod +x startup.sh
 
 CMD ["./startup.sh"]

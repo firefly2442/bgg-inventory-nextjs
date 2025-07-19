@@ -6,6 +6,6 @@ services:
     ports:
       - "9990:3000"
     volumes:
-      - ./allgames.json:/usr/src/app/allgames.json:ro
+      - ./allgames/allgames.json:/usr/src/app/allgames.json:ro
       - ./public/thumbnails/:/usr/src/app/public/thumbnails/:ro
     restart: unless-stopped
