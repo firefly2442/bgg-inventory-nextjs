@@ -20,7 +20,7 @@
     "react-dom": "^19.1.1"
   },
   "devDependencies": {
-    "npm-check-updates": "^18.0.3"
+    "npm-check-updates": "^18.1.1"
   },
   "scripts": {
     "dev": "next",
