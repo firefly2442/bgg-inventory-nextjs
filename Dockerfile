@@ -12,10 +12,10 @@ RUN apt update && \
 # this fixes the issue by building libvips from source and
 # manually installing Sharp
 # https://libvips.github.io/libvips/install.html#building-libvips-from-a-source-tarball
-RUN wget https://github.com/libvips/libvips/archive/refs/tags/v8.17.1.tar.gz
-RUN tar zxf v8.17.1.tar.gz && \
-    rm v8.17.1.tar.gz && \
-    cd libvips-8.17.1 && \
+RUN wget https://github.com/libvips/libvips/archive/refs/tags/v8.17.3.tar.gz
+RUN tar zxf v8.17.3.tar.gz && \
+    rm v8.17.3.tar.gz && \
+    cd libvips-8.17.3 && \
     meson setup build && \
     cd build && \
     meson compile && \
@@ -23,8 +23,6 @@ RUN tar zxf v8.17.1.tar.gz && \
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
-
-RUN npm install sharp
 
 COPY package*.json /usr/src/app/
 # the --only=production flag means this will not install the devDependencies
