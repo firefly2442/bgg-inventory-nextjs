@@ -27,12 +27,6 @@ Build the Docker container:
 docker build . --pull -t ghcr.io/firefly2442/bgg-inventory-nextjs:latest
 ```
 
-Or just pull it straight from Github:
-
-```shell
-docker pull ghcr.io/firefly2442/bgg-inventory-nextjs:latest
-```
-
 Or leverage `docker-compose.yml`:
 
 ```shell
@@ -44,7 +38,7 @@ docker compose build --pull
 Run the Docker container:
 
 ```shell
-docker run -d --restart unless-stopped -p 9990:3000 -v $(pwd)/allgames.json:/usr/src/app/allgames.json -v $(pwd)/public/thumbnails/:/usr/src/app/public/thumbnails/ --name=bgg-inventory-nextjs ghcr.io/firefly2442/bgg-inventory-nextjs:latest
+docker run -d --restart unless-stopped -p 9990:3000 --name=bgg-inventory-nextjs ghcr.io/firefly2442/bgg-inventory-nextjs:latest
 ```
 
 Or leverage the provided `docker-compose.yml`:
