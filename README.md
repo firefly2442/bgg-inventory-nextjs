@@ -85,5 +85,6 @@ Create a Github issue
 
 `bgg-inventory-nextjs` is licensed under the GPLv3
 
-The BoardGameGeek (BGG) API is [licensed](https://boardgamegeek.com/wiki/page/XML_API_Terms_of_Use#)
-for use for non-commercial purposes.
+The [BoardGameGeek (BGG) data](https://boardgamegeek.com/using_the_xml_api)
+through this application is intended for non-commercial use.  If you
+have commercial needs, you can contact them for a commercial license.
