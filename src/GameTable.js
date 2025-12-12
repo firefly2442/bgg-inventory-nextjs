@@ -13,10 +13,7 @@ export default function GameTable({ games }) {
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Thumbnail</TableCell>
             <TableCell>Name</TableCell>
-            <TableCell>Tags</TableCell>
-            <TableCell>Description</TableCell>
             <TableCell>Min Players</TableCell>
             <TableCell>Max Players</TableCell>
             <TableCell>Playing Time Minutes</TableCell>
@@ -24,26 +21,19 @@ export default function GameTable({ games }) {
         </TableHead>
         <TableBody>
           {games.map((row) => (
-            <TableRow key={row.id}>
+            <TableRow key={row.objectid}>
               <TableCell>
                 <a
                   target="_blank"
-                  href={`https://www.boardgamegeek.com/${row.type}/${row.id}/`}
+                  href={`https://www.boardgamegeek.com/boardgame/${row.objectid}/`}
                   rel="noopener noreferrer"
                 >
-                  <img
-                    src={`./thumbnails/${row.id}${row.thumbnailextension}`}
-                    alt={row.name}
-                    title={row.name}
-                  />
+                  {row.objectname}
                 </a>
               </TableCell>
-              <TableCell>{row.name}</TableCell>
-              <TableCell>{row.tags.join(', ')}</TableCell>
-              <TableCell>{row.description}</TableCell>
               <TableCell>{row.minplayers}</TableCell>
               <TableCell>{row.maxplayers}</TableCell>
-              <TableCell>{row.playingtimemins}</TableCell>
+              <TableCell>{row.playingtime}</TableCell>
             </TableRow>
           ))}
         </TableBody>

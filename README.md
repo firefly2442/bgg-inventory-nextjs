@@ -6,7 +6,6 @@ the [BoardGameGeek (BGG) API](https://boardgamegeek.com/wiki/page/BGG_XML_API2).
 ## Requirements
 
 * [Docker](https://www.docker.com/)
-* [Python](https://www.python.org/)
 
 ## Built With
 
@@ -17,13 +16,10 @@ the [BoardGameGeek (BGG) API](https://boardgamegeek.com/wiki/page/BGG_XML_API2).
 
 ## Building
 
-Edit `inventory.json` and set your games.  The IDs are from BoardGameGeek.
-
-Run the Python script which will download thumbnails and details about the
-games via the BoardGameGeek API.  This may take some time depending
-on how many boardgames you have.
-
-`python3 main.py`
+Create an account on Board Game Geek (BGG) and add each game individually
+to your personal collection.  Go into your profile and download the CSV list
+of your collection.  Place the `collection.csv` file in `./public/collection.csv`.
+Overwrite the existing file there.
 
 Build the Docker container:
 
@@ -82,6 +78,10 @@ Run the Nodejs app manually via:
 Run local Trivy security scanning:
 
 `trivy image --ignore-unfixed ghcr.io/firefly2442/bgg-inventory-nextjs:latest`
+
+BGG used to offer [their API](https://boardgamegeek.com/using_the_xml_api) without
+requiring an access token, however, that is now required through app registration.
+Downloading your personal CSV list of games from the site is still allowed.
 
 ## Help
 

@@ -66,27 +66,9 @@ spec:
             {{- with .Values.volumeMounts }}
             {{- toYaml . | nindent 12 }}
             {{- end }}
-            {{- if .Values.persistence.enabled }}
-            - name: {{ .Values.persistence.volumeName }}
-              mountPath: {{ .Values.persistence.mountPath }}
-            {{- end }}
-            {{- if .Values.persistenceAllgames.enabled }}
-            - name: {{ .Values.persistenceAllgames.volumeName }}
-              mountPath: {{ .Values.persistenceAllgames.mountPath }}
-            {{- end }}
       volumes:
         {{- with .Values.volumes }}
         {{- toYaml . | nindent 8 }}
-        {{- end }}
-        {{- if .Values.persistence.enabled }}
-        - name: {{ .Values.persistence.volumeName }}
-          persistentVolumeClaim:
-            claimName: {{ .Values.persistence.claimName }}
-        {{- end }}
-        {{- if .Values.persistenceAllgames.enabled }}
-        - name: {{ .Values.persistenceAllgames.volumeName }}
-          persistentVolumeClaim:
-            claimName: {{ .Values.persistenceAllgames.claimName }}
         {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:

@@ -29,6 +29,8 @@ COPY package*.json /usr/src/app/
 # TODO: --legacy-peer-deps is a hack to force the install around a dependency resolution
 RUN npm install --only=production --legacy-peer-deps
 
+COPY ./public/collection.csv /usr/src/app/public/collection.csv
+
 COPY . /usr/src/app
 
 EXPOSE 3000

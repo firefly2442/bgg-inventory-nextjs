@@ -14,7 +14,7 @@ export default function Github() {
         </MuiLink>
         <br />
         <MuiLink color="inherit" href="https://www.boardgamegeek.com">
-          Data and images via BoardGameGeek
+          Data via BoardGameGeek
         </MuiLink>
       </Typography>
     </>

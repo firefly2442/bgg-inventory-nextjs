@@ -5,7 +5,4 @@ services:
     container_name: bgg-inventory-nextjs
     ports:
       - "9990:3000"
-    volumes:
-      - ./allgames/allgames.json:/usr/src/app/allgames/allgames.json:ro
-      - ./public/thumbnails/:/usr/src/app/public/thumbnails/:ro
     restart: unless-stopped

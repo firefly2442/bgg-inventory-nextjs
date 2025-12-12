@@ -13,13 +13,6 @@ image:
   # Overrides the image tag whose default is the chart appVersion.
   tag: "latest"
 
-command:
-  - /bin/bash
-  - -c
-args:
-  - |
-    python3 main.py && ./startup.sh
-
 # This is for the secrets for pulling an image from a private repository more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
 imagePullSecrets: []
 # This is to override the chart name.
@@ -109,24 +102,6 @@ autoscaling:
   maxReplicas: 10
   targetCPUUtilizationPercentage: 80
   # targetMemoryUtilizationPercentage: 80
-
-persistence:
-  enabled: true
-  accessModes:
-    - ReadWriteOnce
-  size: 500Mi
-  mountPath: /usr/src/app/public/thumbnails/
-  volumeName: thumbnails
-  claimName: bgg-inventory-nextjs-thumbnails
-
-persistenceAllgames:
-  enabled: true
-  accessModes:
-    - ReadWriteOnce
-  size: 100Mi
-  mountPath: /usr/src/app/allgames/
-  volumeName: allgames
-  claimName: bgg-inventory-nextjs-allgames
 
 # Additional volumes on the output Deployment definition.
 volumes: []
