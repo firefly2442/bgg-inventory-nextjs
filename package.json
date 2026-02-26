@@ -24,7 +24,7 @@
     "sharp": "^0.34.5"
   },
   "devDependencies": {
-    "npm-check-updates": "^19.5.0"
+    "npm-check-updates": "^19.6.2"
   },
   "scripts": {
     "dev": "next",
