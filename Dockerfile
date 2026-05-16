@@ -1,6 +1,6 @@
 FROM node:latest
 
-ENV PORT 3000
+ENV PORT=3000
 
 RUN apt update && \
     apt install -y --no-install-recommends meson build-essential pkg-config libglib2.0-dev libexpat1-dev libgirepository1.0-dev curl dos2unix && \
